@@ -1,5 +1,5 @@
 {
-  "name": "chat-agi",
+  "name": "langgraph-ui-sdk",
   "version": "0.0.1",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -16,14 +16,14 @@
   },
   "keywords": [],
   "author": "Amro",
-  	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/AmrAnwar/LangGraph-UI-SDK.git"
-	},
-  	"bugs": {
-		"url": "https://github.com/AmrAnwar/LangGraph-UI-SDK/issues"
-	},
-	"homepage": "https://github.com/AmrAnwar/LangGraph-UI-SDK#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmrAnwar/LangGraph-UI-SDK.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AmrAnwar/LangGraph-UI-SDK/issues"
+  },
+  "homepage": "https://github.com/AmrAnwar/LangGraph-UI-SDK#readme",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.25.9",
