@@ -1,14 +1,18 @@
 {
   "name": "chat-agi",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "description": "SDK for implementing Langgraph in your frontend in few seconds",
   "browser": {
     "[module-name]": false
   },
-  "main": "index.js",
   "scripts": {
     "start": "webpack --mode=development",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production && tsc"
   },
   "keywords": [],
   "author": "",

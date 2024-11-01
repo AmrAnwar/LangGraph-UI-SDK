@@ -1,9 +1,13 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { library } = require("webpack");
 module.exports = {
   entry: "./src/index.tsx",
   devtool: "inline-source-map",
   output: {
     library: "LangGraphChatbot",
+    libraryTarget: "umd",
+    filename: "index.js",
+    clean: true
   },
   module: {
     rules: [

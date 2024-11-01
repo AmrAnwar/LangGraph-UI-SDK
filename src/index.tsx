@@ -32,7 +32,7 @@ const createClient = (
   });
 };
 
-export const createThread = async (
+const createThread = async (
   apiUrl: string,
   apiKey: string | undefined,
   headers: DefaultHeaders
@@ -41,7 +41,7 @@ export const createThread = async (
   return client.threads.create();
 };
 
-export const getThreadState = async (
+const getThreadState = async (
   threadId: string,
   apiUrl: string,
   apiKey: string | undefined,
@@ -56,7 +56,7 @@ export const getThreadState = async (
  * @param  {threadId: string;  messages: LangChainMessage[];}
  * @returns
  */
-export const sendMessage = async (
+const sendMessage = async (
   params: {
     threadId: string;
     messages: LangChainMessage[];
@@ -88,7 +88,7 @@ export const sendMessage = async (
 
 const MarkdownText = makeMarkdownText();
 
-export function MyAssistant(params: Omit<ChatBotInput, "containerId">) {
+function MyAssistant(params: Omit<ChatBotInput, "containerId">) {
   const threadIdRef = useRef<string>();
   const runtime = useLangGraphRuntime({
     threadId: threadIdRef.current,
