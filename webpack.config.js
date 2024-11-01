@@ -1,5 +1,3 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { library } = require("webpack");
 module.exports = {
   entry: "./src/index.tsx",
   devtool: "inline-source-map",
@@ -29,16 +27,5 @@ module.exports = {
         },
       },
     ],
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      scriptLoading: "blocking",
-      inject: "head",
-      template: "./public/index.html",
-      filename: "./index.html",
-    }),
-  ],
-  resolve: {
-    extensions: [".tsx", ".ts", ".js"],
-  },
+  }
 };
