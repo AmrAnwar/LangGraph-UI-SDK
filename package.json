@@ -15,7 +15,15 @@
     "build": "webpack --mode=production && tsc"
   },
   "keywords": [],
-  "author": "",
+  "author": "Amro",
+  	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/AmrAnwar/LangGraph-UI-SDK.git"
+	},
+  	"bugs": {
+		"url": "https://github.com/AmrAnwar/LangGraph-UI-SDK/issues"
+	},
+	"homepage": "https://github.com/AmrAnwar/LangGraph-UI-SDK#readme",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.25.9",
