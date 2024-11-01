@@ -8,7 +8,6 @@ import {
 import { makeMarkdownText } from "@assistant-ui/react-markdown";
 import { Client, ThreadState } from "@langchain/langgraph-sdk";
 import { Thread } from "@assistant-ui/react";
-import React from "react";
 
 export type DefaultHeaders = Record<string, string | null | undefined>;
 export interface ChatBotInput {
