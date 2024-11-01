@@ -14,7 +14,7 @@
     "start": "webpack --mode=development",
     "build": "webpack --mode=production && tsc"
   },
-  "keywords": [],
+  "keywords": ["langgraph", "sdk", "ui", "frontend", "AI", "chatbot"],
   "author": "Amro",
   "repository": {
     "type": "git",

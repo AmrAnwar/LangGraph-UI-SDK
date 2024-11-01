@@ -27,6 +27,7 @@ initChatBot({
       } // your server needed headers 
     })
 ```
+Other option for quick testing is to modify the index.html created in the `node_modules/langgraph-ui-sdk/index.html` and open it directly. 
 
 ## Changing Style
 You can overwrite the CSS from following file:
