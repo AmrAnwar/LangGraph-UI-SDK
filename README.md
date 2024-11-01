@@ -20,7 +20,7 @@ import { initChatBot } from 'langgraph-ui-sdk'
 initChatBot({
       containerId: "assistant-agi", // id of the HTML tag
       apiUrl: "<ADD_YOUR_API_URL>", // server url or LangGraph cloud url
-      apiKey: "<ADD_API_KEY>" // optional only for local development
+      apiKey: "<ADD_API_KEY>", // optional only for local development
       configurable: { "param1": "value1" }, // LangGraph configurable parameters 
       headers: {
         'Authorization': 'Bearer <TOKEN>',
