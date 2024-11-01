@@ -1,9 +1,12 @@
-# LangGraph-UI-SDK
-LangGraph user interface SDK requires only JavaScript or Typescript to have chat component connected to your server or LangGraph cloud directly.   
+# langgraph-ui-sdk
+LangGraph user interface SDK requires only JavaScript or Typescript to have chat component connected to your server or LangGraph cloud directly   
 
 ![image](./images/intro.png)
 
-## Set up
+setup can be done using npm install or CDN in HTML file directly 
+
+## Set up using npm
+
 Install the package
 ```bash
 npm install langgraph-ui-sdk
@@ -27,7 +30,26 @@ initChatBot({
       } // your server needed headers 
     })
 ```
-Other option for quick testing is to modify the index.html created in the `node_modules/langgraph-ui-sdk/index.html` and open it directly. 
+
+## Using CDN
+```html
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/langgraph-ui-sdk@0.0.1/dist/index.js"></script>
+</head>
+
+<body>
+  <section id="assistant-agi"></section>
+  <script>LangGraphChatbot.initChatBot({
+      containerId: "assistant-agi", // id of the HTML tag
+      apiUrl: "<ADD_YOUR_API_URL>", // server url or LangGraph cloud url
+      apiKey: "<ADD_API_KEY>", // optional only for local development
+      configurable: { "param1": "value1" }, // LangGraph configurable parameters 
+      headers: {
+        'Authorization': 'Bearer <TOKEN>',
+      } // your server needed headers 
+    })</script>
+</body>
+```
 
 ## Changing Style
 You can overwrite the CSS from following file:
