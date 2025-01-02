@@ -1,12 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Assistant from "./components/Assistant";
-import {ChatBotInput} from "./types";
+import { ChatBotInput } from "./types";
 
 require("@assistant-ui/react/styles/index.css");
 
 export function initChatBot(params: ChatBotInput) {
-  const { containerId, apiUrl, configurable, agentId, headers, apiKey } = params;
+  const {
+    containerId,
+    apiUrl,
+    configurable,
+    agentId,
+    headers,
+    apiKey,
+    retrievalTools,
+    actionTools,
+  } = params;
 
   const container = document.getElementById(containerId);
   const root = ReactDOM.createRoot(container!);
@@ -18,6 +27,8 @@ export function initChatBot(params: ChatBotInput) {
       configurable={configurable ?? {}}
       headers={headers ?? {}}
       agentId={agentId ?? "agent"}
+      retrievalTools={retrievalTools ?? []}
+      actionTools={actionTools ?? []}
     />
   );
 }
