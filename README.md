@@ -49,7 +49,7 @@ initChatBot({
 ## Using CDN
 ```html
 <head>
-  <script src="https://cdn.jsdelivr.net/npm/langgraph-ui-sdk@0.0.1/dist/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/langgraph-ui-sdk@0.1.1/dist/index.js"></script>
 </head>
 
 <body>
