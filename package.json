@@ -33,30 +33,30 @@
   "homepage": "https://github.com/AmrAnwar/LangGraph-UI-SDK#readme",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.25.9",
-    "@babel/preset-env": "^7.25.9",
-    "@babel/preset-react": "^7.25.9",
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
     "@babel/preset-typescript": "^7.26.0",
-    "@types/react-dom": "^18.3.1",
+    "@types/react-dom": "^18.3.5",
     "autoprefixer": "^10.4.20",
     "babel-loader": "^9.2.1",
     "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.3",
-    "postcss": "^8.4.49",
+    "postcss": "^8.5.1",
     "postcss-loader": "^8.1.1",
     "style-loader": "^4.0.0",
     "tailwindcss": "^3.4.17",
-    "webpack": "^5.95.0",
+    "webpack": "^5.97.1",
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@assistant-ui/react": "^0.5",
-    "@assistant-ui/react-langgraph": "^0.0.12",
-    "@assistant-ui/react-markdown": "^0.2",
+    "@assistant-ui/react": "^0.7.38",
+    "@assistant-ui/react-langgraph": "^0.1.17",
+    "@assistant-ui/react-markdown": "^0.7.10",
     "@langchain/langgraph-sdk": "^0.0.14",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "zod": "^3.23.8",
-    "zod-to-json-schema": "^3.23.3"
+    "zod": "^3.24.1",
+    "zod-to-json-schema": "^3.24.1"
   }
 }

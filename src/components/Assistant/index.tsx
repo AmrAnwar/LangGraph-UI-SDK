@@ -16,9 +16,10 @@ export default function Assistant(params: AssistantParams) {
       runtime={runtime}
       assistantMessage={{ components: { Text: MarkdownText } }}
       tools={[
-        ...actionTools(params.actionTools),
-        ...retrievalTools(params.retrievalTools),
+        ...actionTools(params.actionTools ?? [], params.colors),
+        ...retrievalTools(params.retrievalTools ?? []),
       ]}
+      welcome={params.welcome}
     />
   );
 }

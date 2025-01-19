@@ -15,6 +15,8 @@ export function initChatBot(params: ChatBotInput) {
     apiKey,
     retrievalTools,
     actionTools,
+    welcome,
+    colors,
   } = params;
 
   const container = document.getElementById(containerId);
@@ -29,6 +31,8 @@ export function initChatBot(params: ChatBotInput) {
       agentId={agentId ?? "agent"}
       retrievalTools={retrievalTools ?? []}
       actionTools={actionTools ?? []}
+      welcome={welcome ?? {}}
+      colors={colors ?? {}}
     />
   );
 }

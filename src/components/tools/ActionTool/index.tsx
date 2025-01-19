@@ -1,19 +1,26 @@
 import React, { useState } from "react";
 import { makeAssistantToolUI } from "@assistant-ui/react";
 import { TransactionConfirmationPending } from "./components/TransactionConfirmationPending";
+import { useLangGraphRuntimeSend } from "@assistant-ui/react-langgraph";
+import { ColorsConfig } from "../../../types";
 
-export const actionTools = (toolNames: string[]) => {
+export const actionTools = (toolNames: string[], colors?: ColorsConfig) => {
   return toolNames.map((toolName) => {
     return makeAssistantToolUI<any, string>({
       toolName: toolName,
       render: ({ args, result, status, addResult }) => {
         const [isExpanded, setIsExpanded] = useState(false);
+        const message = useLangGraphRuntimeSend();
         const handleReject = async () => {
-          addResult({ approve: false });
+          addResult({
+            cancelled: true,
+            next_action:
+              "User rejected the tool execution, ask the user to correct you if you choose wrong tool or wrong parameters",
+          });
         };
 
         const handleConfirm = async () => {
-          addResult({});
+          await message([], { command: { resume: "action" } });
         };
         return (
           <div className="max-w-sm my-2  bg-white rounded-lg border border-gray-200 p-2">
@@ -33,9 +40,9 @@ export const actionTools = (toolNames: string[]) => {
                 {...args}
                 onConfirm={handleConfirm}
                 onReject={handleReject}
+                colors={colors}
               />
             )}
-            {result} {status.type}
             {!result && status.type == "running" ? (
               <div className="mt-4 flex justify-center items-center">
                 <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-600"></div>
@@ -61,24 +68,6 @@ export const actionTools = (toolNames: string[]) => {
             )}
           </div>
         );
-
-        // return (
-        //   <div className="mb-4 flex flex-col items-center gap-2">
-        //     <div>
-        //       <pre className="whitespace-pre-wrap break-all text-center">
-        //         action_tool({JSON.stringify(args)})
-        //       </pre>
-        //     </div>
-        //     {!result && status.type !== "running" && (
-        //       <TransactionConfirmationPending
-        //         {...args}
-        //         onConfirm={handleConfirm}
-        //         onReject={handleReject}
-        //         toolName={toolName}
-        //       />
-        //     )}
-        //   </div>
-        // );
       },
     });
   });

@@ -1,4 +1,7 @@
+import { ThreadWelcomeConfig } from "@assistant-ui/react";
+
 export type DefaultHeaders = Record<string, string | null | undefined>;
+export type ColorsConfig = {primary?: string, cancellation?: string};
 
 export interface ChatBotInput {
   containerId: string;
@@ -7,6 +10,8 @@ export interface ChatBotInput {
   agentId: string;
   configurable: { [key: string]: unknown };
   headers: DefaultHeaders;
-  retrievalTools: string[];
-  actionTools: string[];
+  retrievalTools?: string[];
+  actionTools?: string[];
+  welcome?: ThreadWelcomeConfig;
+  colors?: ColorsConfig;
 }

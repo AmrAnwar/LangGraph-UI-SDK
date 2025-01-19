@@ -1,32 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
 import { TransactionConfirmationPendingProps } from "./types";
+import { darken } from "../../../../../utils";
 
 export function TransactionConfirmationPending(
   props: TransactionConfirmationPendingProps
 ) {
-  const { onConfirm, onReject } = props;
+  const { onConfirm, onReject, colors } = props;
+  const [isPrimaryHover, setIsPrimaryHover] = useState(false);
+  const [isCancellationHover, setIsCancellationHover] = useState(false);
 
+  let { primary, cancellation } = colors ?? {};
+  primary = primary ?? "#000000";
+  const primaryHover = darken(primary, 10);
+  cancellation = cancellation ?? "#9CA3AF";
+  const cancellationHover = darken(cancellation, 10);
   return (
     <div className="flex justify-center items-center space-x-4">
       <button
+        style={{
+          backgroundColor: isPrimaryHover ? primaryHover : primary,
+        }}
+        onMouseEnter={() => {
+          setIsPrimaryHover(!isPrimaryHover);
+        }}
+        onMouseOut={() => {
+          setIsPrimaryHover(!isPrimaryHover);
+        }}
         onClick={onConfirm}
-        className="py-2 px-3
+        className="          
+        chatbot-tool-confirmation-button
+          py-2 px-3
           text-sm font-medium text-center
-          text-white bg-green-600 rounded-lg
-          hover:bg-green-700 focus:ring-4
-          focus:outline-none
-          focus:ring-green-300
-          dark:bg-green-500
-          dark:hover:bg-green-600
-          dark:focus:ring-green-900
-          "
+          text-white rounded-lg
+           focus:ring-4
+          focus:outline-none"
       >
         ✓ Confirm
       </button>
+
       <button
+        style={{
+          backgroundColor: isCancellationHover
+            ? cancellationHover
+            : cancellation,
+        }}
+        onMouseEnter={() => {
+          setIsCancellationHover(!isCancellationHover);
+        }}
+        onMouseOut={() => {
+          setIsCancellationHover(!isCancellationHover);
+        }}
         onClick={onReject}
-        className="py-2 px-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600
-          "
+        className="          
+        chatbot-tool-rejection-button
+          py-2 px-3 text-sm font-medium
+          text-white  rounded-lg
+           focus:ring-4
+          focus:outline-none"
       >
         Reject
       </button>
