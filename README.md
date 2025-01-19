@@ -28,6 +28,21 @@ initChatBot({
       headers: {
         'Authorization': 'Bearer <TOKEN>',
       } // your server needed headers 
+      retrievalTools: [], // add tools that doesn't need confirmation to be shown in UI
+      actionTools: [], // add interrupt tools
+      colors: { // edit colors if needed for interrupt tools
+        primary: '#000000', // default value 
+        cancellation: '#9CA3AF', // default value
+      },
+      welcome: { // Add welcoming message and suggestions
+        message: "How can I help you today?", // default 
+        suggestions: [
+          {
+            text: "What can I do for you ?",
+            prompt: "Tell me what you need help with",
+          }
+        ],
+      }
     })
 ```
 
@@ -47,6 +62,21 @@ initChatBot({
       headers: {
         'Authorization': 'Bearer <TOKEN>',
       } // your server needed headers 
+      retrievalTools: [], // add tools that doesn't need confirmation to be shown in UI
+      actionTools: [], // add interrupt tools
+      colors: { // edit colors if needed for interrupt tools
+        primary: '#000000', // default value 
+        cancellation: '#9CA3AF', // default value
+      },
+      welcome: { // Add welcoming message and suggestions
+        message: "How can I help you today?", // default 
+        suggestions: [
+          {
+            text: "What can I do for you ?",
+            prompt: "Tell me what you need help with",
+          }
+        ],
+      }
     })</script>
 </body>
 ```
