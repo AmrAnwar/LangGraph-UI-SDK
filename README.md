@@ -1,7 +1,7 @@
 # langgraph-ui-sdk
-LangGraph user interface SDK requires only JavaScript or Typescript to have chat component connected to your server or LangGraph cloud directly   
+LangGraph user interface SDK requires only JavaScript or Typescript to have chat component connected to your server or LangGraph cloud directly. the SDK is also capable of rendering tools and interacting with interrupt tools
 
-![image](./images/intro.png)
+![image](./images/tool.png)
 
 setup can be done using npm install or CDN in HTML file directly 
 
