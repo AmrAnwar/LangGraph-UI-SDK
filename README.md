@@ -61,7 +61,7 @@ initChatBot({
       configurable: { "param1": "value1" }, // LangGraph configurable parameters 
       headers: {
         'Authorization': 'Bearer <TOKEN>',
-      } // your server needed headers 
+      }, // your server needed headers 
       retrievalTools: [], // add tools that doesn't need confirmation to be shown in UI
       actionTools: [], // add interrupt tools
       colors: { // edit colors if needed for interrupt tools
